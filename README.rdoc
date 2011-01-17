@@ -1,0 +1,11 @@
+= RandomSlug
+
+This is a tiny plugin that enables using random slugs with friendly_id gem. Use it like this:
+
+  class Post
+    has_friendly_id :random_slug, :use_slug=>true
+  end
+
+This will create a 10 characters alphanumeric string, such as "gik0r5dp82".
+
+Copyright (c) 2011 José Ignacio Fernández, released under the MIT license
