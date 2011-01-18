@@ -4,11 +4,7 @@ module RandomSlug
   end
 
   def random_slug
-    if read_attribute(friendly_id_config.cache_column).nil?
-      self.send :"#{friendly_id_config.cache_column}=", RandomSlug::slug
-    else
-      read_attribute(friendly_id_config.cache_column)
-    end
+    @random_slug ||= persisted? ? friendly_id : RandomSlug::slug
   end
 end
 
